@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ClassMateViewController.prepareForSegue(UIStoryboardSegue, sender : AnyObject?) -&gt; ():ClassMateViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "classMate">
+            </PersistentString>
+            <PersistentString
+               value = "classMates[0].name">
+            </PersistentString>
+            <PersistentString
+               value = "(indexPath?.row)!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ClassMateViewController.viewWillAppear(Bool) -&gt; ():ClassMateViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "classMates[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
