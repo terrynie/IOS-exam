@@ -123,7 +123,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             saveImage(getImage, newSize: CGSize(width: 300,height: 160), percent: 0.5, imageName: getImageName)
         }else {
             //使用相机
-            let imageName = OCCamera.imagePicker(picker, didFinishPickingMediaWithInfo: info, andImageView: self.test, andImageName: self.name.text)
+            imageName = OCCamera.imagePicker(picker, didFinishPickingMediaWithInfo: info, andImageView: self.test, andImageName: self.name.text)
             test.image = UIImage.init(named: imageName)
         }
     }
