@@ -60,7 +60,7 @@ class ClassMateViewController: UITableViewController,UINavigationControllerDeleg
         if (imageStr != nil) {
             cell.images.image = UIImage.init(named: imageStr!)
         }else{
-            cell.images.image = UIImage.init(named: "1")
+            cell.images.image = UIImage.init(named: "no")
         }
         
         let grade = "\(classMates[indexPath.row].grade!)"
@@ -107,24 +107,8 @@ class ClassMateViewController: UITableViewController,UINavigationControllerDeleg
         if segue.identifier == "showInfo" {
             let indexPath = tableView.indexPathForSelectedRow
             
-            
-            
             var nextPage = segue.destinationViewController as! ViewController
             nextPage.classMate = classMates[(indexPath?.row)!]
-//            nextPage.name = UITextField()
-//            nextPage.name.text = classMates[(indexPath?.row)!].name
-//            nextPage.price = UITextField()
-//            nextPage.price.text = "\(classMates[(indexPath?.row)!].price?.shortValue)"
-//            nextPage.desp = UITextView()
-//            nextPage.desp.text = classMates[(indexPath?.row)!].desc
-//            nextPage.test = UIImageView()
-//            nextPage.test.image = UIImage(contentsOfFile: classMates[(indexPath?.row)!].images!)
-//            
-//            nextPage.grade = classMates[(indexPath?.row)!].grade!.shortValue
-//            for i in 0..<Int(nextPage.grade) {
-//                nextPage.stars[i] = UIImageView()
-//                nextPage.stars[i].image = UIImage(named: "star_light")
-//            }
             
         
         }

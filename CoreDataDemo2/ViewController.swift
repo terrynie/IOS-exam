@@ -20,7 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var desp: UITextView!
     
     @IBOutlet weak var addButton: UIButton!
-    var grade: Int16!
+    var grade: Int16! = 0
     
     @IBOutlet weak var star1: UIButton!
     @IBOutlet weak var star2: UIButton!
@@ -79,6 +79,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @IBAction func add() {
+        if name.text == nil {
+            let actionSheet = UIActionSheet(title: "请输入餐品名称",delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil)
+            actionSheet.actionSheetStyle = UIActionSheetStyle.BlackTranslucent
+            actionSheet.showInView(self.view)
+            return
+        }
+        else if Float(price.text!) == nil {
+            let actionSheet = UIActionSheet(title: "请输入合法数字",delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil)
+            actionSheet.actionSheetStyle = UIActionSheetStyle.BlackTranslucent
+            actionSheet.showInView(self.view)
+            return
+        }
+        else if desp.text == nil {
+            let actionSheet = UIActionSheet(title: "请添加菜品描述",delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil)
+            actionSheet.actionSheetStyle = UIActionSheetStyle.BlackTranslucent
+            actionSheet.showInView(self.view)
+            return
+        }
+        else if imageName == nil {
+            let actionSheet = UIActionSheet(title: "请添加图片",delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil)
+            actionSheet.actionSheetStyle = UIActionSheetStyle.BlackTranslucent
+            actionSheet.showInView(self.view)
+            return
+        }
+        
+        
+        
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context  = delegate.managedObjectContext
         let newClassMate = NSEntityDescription.insertNewObjectForEntityForName("ClassMate", inManagedObjectContext: context) as! ClassMate
@@ -107,7 +134,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         for i in 0..<5 {
             stars[i].image = UIImage(named: "star_dark")
         }
-        grade = Int16(sender.tag)
+        grade = Int16(sender.tag + 1)
         for i in 0 ..< sender.tag+1 {
             stars[i].image = UIImage(named: "star_light")
         }

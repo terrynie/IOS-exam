@@ -113,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="663" y="427"/>
         </scene>
-        <!--View Controller-->
+        <!--添加点评-->
         <scene sceneID="Nts-GH-en4">
             <objects>
                 <viewController id="icH-EW-TR9" customClass="ViewController" customModule="CoreDataDemo2" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,7 +170,7 @@
                                     <constraint firstAttribute="width" constant="200" id="JXb-h6-vPT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="JXb-h6-vPT"/>
@@ -369,7 +369,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="lN0-Ve-Y0J"/>
+                    <navigationItem key="navigationItem" title="添加点评" id="lN0-Ve-Y0J"/>
                     <connections>
                         <outlet property="addButton" destination="cGx-6A-IId" id="6p5-GT-37R"/>
                         <outlet property="desp" destination="C1X-9i-kVf" id="s3q-VP-vV4"/>
