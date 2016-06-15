@@ -121,6 +121,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         catch {
             print(error)
         }
+        
+        let actionSheet = UIActionSheet(title: "添加成功",delegate: self, cancelButtonTitle: "确定", destructiveButtonTitle: nil)
+        actionSheet.actionSheetStyle = UIActionSheetStyle.BlackTranslucent
+        actionSheet.showInView(self.view)
     }
     
     @IBAction func getImage(sender: AnyObject) {
