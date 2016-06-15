@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIActionSheetDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIActionSheetDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     var classMate:ClassMate!
     
@@ -54,6 +54,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         buttons.append(star5)
         buttons.append(images)
         buttons.append(addButton)
+        
+        name.delegate = self
+        price.delegate = self
+//        desp.delegate = self
         
         if classMate != nil{
             
@@ -170,6 +174,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePicker.delegate = self
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.name.resignFirstResponder()
+        self.price.resignFirstResponder()
+        self.desp.resignFirstResponder()
     }
     
     func saveImage(currentImage: UIImage, newSize: CGSize, percent: CGFloat, imageName:String) {
